@@ -22,9 +22,5 @@ class GbParseMongoPipeline:
 
     def process_item(self, item, spider):
         self.db[item._values['user']].insert_one(item)
-        # if self.db[spider.inst_users[0]].find_one({'subscription': spider.inst_users[1]}) and self.db[spider.inst_users[1]].find_one({'subscription': spider.inst_users[0]}):
-        #     print(f'цепочка: {spider.inst_users[0]} {spider.inst_users[1]}')
-            #spider.crawler.stop()
-
         return item
     
